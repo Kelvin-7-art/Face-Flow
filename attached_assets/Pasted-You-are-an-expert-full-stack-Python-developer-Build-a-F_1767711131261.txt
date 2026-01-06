@@ -1,0 +1,120 @@
+You are an expert full-stack Python developer. Build a Face Recognition Attendance System as a real website using FastAPI + HTML/CSS/JavaScript.
+
+GOAL
+A web app that lets an admin register people (capture face samples), then take attendance by recognizing faces from a webcam or uploaded images. Use OpenCV for face detection and a face-embeddings approach for recognition (preferred: `face_recognition` library). Store people + embeddings + attendance logs in SQLite. Provide a clean UI with multiple pages.
+
+STACK
+- Backend: FastAPI (Python)
+- Frontend: Jinja2 templates (server-rendered HTML) + vanilla JS for camera capture
+- Computer Vision: OpenCV + face embeddings
+  - Preferred embeddings: `face_recognition` (dlib-based)
+  - If `face_recognition` cannot be installed, fallback to OpenCV DNN face detector + simple embedding method (less accurate) and show a warning banner in the UI.
+- Database: SQLite (via SQLAlchemy or sqlite3)
+- Static: CSS + a little JS
+- Export logs to CSV
+
+CORE PAGES / ROUTES
+1) GET /                 Home page with app description + quick stats (people count, today attendance count)
+2) GET /register         Register page (form: person_id, full_name, role/department)
+   - Option A: webcam capture (JS getUserMedia → capture frames → POST images)
+   - Option B: upload 5–20 face images
+3) POST /register        Save person + compute final embedding
+4) GET /attendance       Attendance page
+   - Option A: webcam capture (take photo button every 1–2 seconds or manual capture)
+   - Option B: upload image for recognition
+5) POST /attendance/check  Recognize faces in image, return recognized names + bounding boxes + distances
+   - If recognized and not already marked in the last 5 minutes, write an attendance record
+6) GET /logs             Attendance logs table with filters (date range, person_id/name), export button
+7) GET /people           Manage people list
+8) POST /people/delete   Delete person and their stored samples
+
+IMPORTANT IMPLEMENTATION DETAILS
+- Face pipeline:
+  - Detect face(s)
+  - If multiple faces on register page, reject with message “only 1 face allowed”
+  - Compute embedding for each sample
+  - Store the averaged embedding as the person’s profile
+  - Matching: cosine distance or Euclidean; configurable threshold in UI (default reasonable value)
+- Duplicate prevention:
+  - Do not mark the same person more than once within 5 minutes (configurable)
+- Save images:
+  - Store registration samples under: /data/faces/<person_id>/sample_001.jpg ...
+- Store embeddings:
+  - In SQLite as BLOB (pickle) or JSON list of floats
+- Return detection info:
+  - For attendance check: return list of recognized faces with {name, person_id, distance, bbox}
+  - UI should display results and highlight recognized vs unknown
+
+PROJECT STRUCTURE (MUST FOLLOW)
+/main.py                    (FastAPI app entry)
+/templates/
+   base.html
+   index.html
+   register.html
+   attendance.html
+   logs.html
+   people.html
+/static/
+   styles.css
+   app.js                   (camera capture + submit)
+/services/
+   db.py                    (SQLite init + CRUD)
+   face.py                  (detection, embeddings, matching)
+   utils.py                 (CSV export, time helpers)
+/data/
+   app.db
+   faces/                   (saved samples)
+
+DATABASE SCHEMA (SQLite)
+- people(
+    person_id TEXT PRIMARY KEY,
+    full_name TEXT NOT NULL,
+    role TEXT,
+    embedding BLOB NOT NULL,
+    created_at TEXT NOT NULL
+  )
+- attendance(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person_id TEXT,
+    full_name TEXT,
+    ts TEXT NOT NULL,
+    distance REAL,
+    FOREIGN KEY(person_id) REFERENCES people(person_id)
+  )
+
+FRONTEND REQUIREMENTS
+- Clean, modern UI in plain CSS (navbar + cards + tables)
+- Register page:
+  - Webcam preview box
+  - “Capture Sample” button (collects N samples, show progress)
+  - Upload alternative
+- Attendance page:
+  - Webcam preview + “Capture & Check”
+  - Upload alternative
+  - Show recognition results (name/distance) and “Marked attendance!” messages
+- Logs page:
+  - Filter form + table
+  - Export CSV button downloads file
+
+REPLIT COMPATIBILITY
+- Include a requirements.txt
+- Provide clear run instructions:
+  - `uvicorn main:app --host 0.0.0.0 --port 3000`
+- If webcam streaming doesn’t work in Replit, the app must still work using image upload.
+- Use base64 image upload from the browser for webcam captures:
+  - JS captures a frame from <video> → canvas → base64 → POST JSON to backend
+- Backend should decode base64 → numpy array → OpenCV image.
+
+SECURITY / SAFETY
+- No user authentication required for now (keep it simple)
+- Validate inputs and file types (jpg/png)
+- Reasonable error messages
+
+DELIVERABLE
+Generate all code files (main.py, templates, static, services, requirements.txt) with comments.
+Make sure it runs end-to-end.
+
+BONUS (IF POSSIBLE)
+- Add an API endpoint GET /api/health
+- Add a “threshold” slider on Attendance page
+- Add a “today’s attendance” summary section on Home
