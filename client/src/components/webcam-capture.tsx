@@ -1,5 +1,5 @@
 import { useRef, useState, useCallback, useEffect } from "react";
-import { Camera, CameraOff, RefreshCw } from "lucide-react";
+import { Camera, CameraOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
@@ -24,16 +24,23 @@ export function WebcamCapture({
   const [isActive, setIsActive] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (stream) {
+      video.srcObject = stream;
+      video.play().catch((err) => console.error("Video play error:", err));
+    } else {
+      video.srcObject = null;
+    }
+  }, [stream]);
+
   const startCamera = useCallback(async () => {
     try {
       setError(null);
       const mediaStream = await navigator.mediaDevices.getUserMedia({
         video: { facingMode: "user", width: { ideal: 640 }, height: { ideal: 480 } },
       });
-      if (videoRef.current) {
-        videoRef.current.srcObject = mediaStream;
-        await videoRef.current.play();
-      }
       setStream(mediaStream);
       setIsActive(true);
     } catch (err) {
@@ -79,22 +86,21 @@ export function WebcamCapture({
   return (
     <Card className={`overflow-hidden ${className}`}>
       <div className={`relative w-full ${aspectClass} bg-muted`}>
-        {isActive ? (
-          <>
-            <video
-              ref={videoRef}
-              autoPlay
-              playsInline
-              muted
-              className="absolute inset-0 h-full w-full object-cover"
-              data-testid="video-webcam"
-            />
-            <div className="absolute bottom-2 left-2 flex items-center gap-1.5">
-              <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-red-500" />
-              <span className="text-xs font-medium text-white drop-shadow-md">Live</span>
-            </div>
-          </>
-        ) : (
+        <video
+          ref={videoRef}
+          autoPlay
+          playsInline
+          muted
+          className={`absolute inset-0 h-full w-full object-cover ${isActive ? "block" : "hidden"}`}
+          data-testid="video-webcam"
+        />
+        {isActive && (
+          <div className="absolute bottom-2 left-2 flex items-center gap-1.5">
+            <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-red-500" />
+            <span className="text-xs font-medium text-white drop-shadow-md">Live</span>
+          </div>
+        )}
+        {!isActive && (
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-muted-foreground">
             <CameraOff className="h-12 w-12" />
             <span className="text-sm">Camera is off</span>
