@@ -31,7 +31,7 @@ export default function Logs() {
   const [dateTo, setDateTo] = useState<Date | undefined>();
 
   const { data: logs, isLoading } = useQuery<Attendance[]>({
-    queryKey: ["/api/attendance", { search: searchQuery, dateFrom, dateTo }],
+    queryKey: ["/api/attendance"],
   });
 
   const filteredLogs = logs?.filter((log) => {
