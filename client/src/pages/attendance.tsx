@@ -43,7 +43,7 @@ export default function Attendance() {
         embeddings,
         threshold: threshold[0],
       });
-      return response as RecognitionResult[];
+      return response.json() as Promise<RecognitionResult[]>;
     },
     onSuccess: (data) => {
       setResults(data);

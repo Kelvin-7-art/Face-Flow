@@ -83,7 +83,7 @@ export default function Register() {
   const registerMutation = useMutation({
     mutationFn: async (data: RegisterFormValues & { embeddings: number[][] }) => {
       const response = await apiRequest("POST", "/api/people", data);
-      return response;
+      return response.json();
     },
     onSuccess: () => {
       toast({
