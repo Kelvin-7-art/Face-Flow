@@ -1,0 +1,13 @@
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+[1G[0K[2m4:17:52 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m Re-optimizing dependencies because vite config has changed
+4:17:52 PM [express] serving on port 5000
+Browserslist: browsers data (caniuse-lite) is 6 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+A PostCSS plugin did not pass the `from` option to `postcss.parse`. This may cause imported assets to be incorrectly transformed. If you've recently added a PostCSS plugin that raised this warning, please contact the package author to fix the issue.
+4:18:06 PM [express] GET /api/stats 304 in 27ms :: {"totalPeople":1,"todayAttendance":3,"recentActivity":[{"id":3,"personId":"WER234","fullName":"Khotso Kgardi","timestamp":"2026-04-13T16:09:32.325Z","distance":0.015358056},{"id":2,"personId":"WR477","fullName":"Kelvin Kgarudi","timestamp":"2026-04-13T16:04:34.183Z","distance":0.009669604},{"id":1,"personId":"WR45","fullName":"Kelvin Kgarudi","timestamp":"2026-04-13T16:02:49.708Z","distance":0.032146342}]}
+12:55:04 PM [express] GET /api/stats 200 in 43ms :: {"totalPeople":1,"todayAttendance":0,"recentActivity":[{"id":3,"personId":"WER234","fullName":"Khotso Kgardi","timestamp":"2026-04-13T16:09:32.325Z","distance":0.015358056},{"id":2,"personId":"WR477","fullName":"Kelvin Kgarudi","timestamp":"2026-04-13T16:04:34.183Z","distance":0.009669604},{"id":1,"personId":"WR45","fullName":"Kelvin Kgarudi","timestamp":"2026-04-13T16:02:49.708Z","distance":0.032146342}]}

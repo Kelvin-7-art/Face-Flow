@@ -1,0 +1,71 @@
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+[1G[0K4:07:20 PM [express] serving on port 5000
+Browserslist: browsers data (caniuse-lite) is 6 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+A PostCSS plugin did not pass the `from` option to `postcss.parse`. This may cause imported assets to be incorrectly transformed. If you've recently added a PostCSS plugin that raised this warning, please contact the package author to fix the issue.
+4:07:26 PM [express] GET /api/stats 304 in 20ms :: {"totalPeople":2,"todayAttendance":2,"recentActivity":[{"id":2,"personId":"WR477","fullName":"Kelvin Kgarudi","timestamp":"2026-04-13T16:04:34.183Z","distance":0.009669604},{"id":1,"personId":"WR45","fullName":"Kelvin Kgarudi","timestamp":"2026-04-13T16:02:49.708Z","distance":0.032146342}]}
+4:07:52 PM [express] GET /api/stats 304 in 13ms :: {"totalPeople":2,"todayAttendance":2,"recentActivity":[{"id":2,"personId":"WR477","fullName":"Kelvin Kgarudi","timestamp":"2026-04-13T16:04:34.183Z","distance":0.009669604},{"id":1,"personId":"WR45","fullName":"Kelvin Kgarudi","timestamp":"2026-04-13T16:02:49.708Z","distance":0.032146342}]}
+4:07:56 PM [express] GET /api/attendance/[object%20Object] 200 in 6ms
+4:08:13 PM [express] GET /api/people 304 in 11ms :: [{"personId":"WR477","fullName":"Kelvin Kgarudi","role":"Information Technology","sampleCount":3,"createdAt":"2026-04-13T16:04:15.990Z"},{"personId":"WR45","fullName":"Kelvin Kgarudi","role":"Information Technology","sampleCount":3,"createdAt":"2026-04-13T16:01:35.535Z"}]
+4:08:16 PM [express] DELETE /api/people/WR477 200 in 31ms :: {"success":true}
+4:08:19 PM [express] GET /api/people 200 in 2ms :: [{"personId":"WR45","fullName":"Kelvin Kgarudi","role":"Information Technology","sampleCount":3,"createdAt":"2026-04-13T16:01:35.535Z"}]
+4:08:22 PM [express] DELETE /api/people/WR45 200 in 6ms :: {"success":true}
+4:08:22 PM [express] GET /api/people 200 in 2ms :: []
+4:08:24 PM [express] GET /api/stats 200 in 4ms :: {"totalPeople":0,"todayAttendance":2,"recentActivity":[{"id":2,"personId":"WR477","fullName":"Kelvin Kgarudi","timestamp":"2026-04-13T16:04:34.183Z","distance":0.009669604},{"id":1,"personId":"WR45","fullName":"Kelvin Kgarudi","timestamp":"2026-04-13T16:02:49.708Z","distance":0.032146342}]}
+4:08:33 PM [express] GET /api/stats 304 in 4ms :: {"totalPeople":0,"todayAttendance":2,"recentActivity":[{"id":2,"personId":"WR477","fullName":"Kelvin Kgarudi","timestamp":"2026-04-13T16:04:34.183Z","distance":0.009669604},{"id":1,"personId":"WR45","fullName":"Kelvin Kgarudi","timestamp":"2026-04-13T16:02:49.708Z","distance":0.032146342}]}
+4:09:17 PM [express] POST /api/people 201 in 16ms :: {"success":true,"personId":"WER234"}
+4:09:32 PM [express] POST /api/attendance/check 200 in 49ms :: [{"personId":"WER234","fullName":"Khotso Kgardi","distance":0.015358056205612147,"bbox":{"x":248.2157297947596,"y":145.66712477647556,"width":236.79902209130006,"height":225.95127050639908},"isNew":true}]
+4:09:53 PM [express] GET /api/attendance/[object%20Object] 200 in 4ms
+4:09:59 PM [express] GET /api/attendance/[object%20Object] 200 in 4ms
+4:09:59 PM [express] GET /api/attendance/[object%20Object] 200 in 3ms
+4:10:04 PM [express] GET /api/people 200 in 11ms :: [{"personId":"WER234","fullName":"Khotso Kgardi","role":"Information Technology","sampleCount":3,"createdAt":"2026-04-13T16:09:17.955Z"}]
+4:10:13 PM [express] GET /api/stats 200 in 3ms :: {"totalPeople":1,"todayAttendance":3,"recentActivity":[{"id":3,"personId":"WER234","fullName":"Khotso Kgardi","timestamp":"2026-04-13T16:09:32.325Z","distance":0.015358056},{"id":2,"personId":"WR477","fullName":"Kelvin Kgarudi","timestamp":"2026-04-13T16:04:34.183Z","distance":0.009669604},{"id":1,"personId":"WR45","fullName":"Kelvin Kgarudi","timestamp":"2026-04-13T16:02:49.708Z","distance":0.032146342}]}
+4:11:14 PM [express] GET /api/attendance/[object%20Object] 200 in 4ms
+4:11:22 PM [express] GET /api/attendance/[object%20Object] 200 in 4ms
+4:11:44 PM [express] POST /api/attendance/check 200 in 15ms :: [{"personId":"WER234","fullName":"Khotso Kgardi","distance":0.014580176212314444,"bbox":{"x":252.97617180931923,"y":137.43113536963654,"width":207.31267627858685,"height":211.46683343486114},"isNew":false}]
+4:11:50 PM [express] GET /api/attendance/[object%20Object] 200 in 5ms
+4:13:00 PM [express] GET /api/stats 304 in 13ms :: {"totalPeople":1,"todayAttendance":3,"recentActivity":[{"id":3,"personId":"WER234","fullName":"Khotso Kgardi","timestamp":"2026-04-13T16:09:32.325Z","distance":0.015358056},{"id":2,"personId":"WR477","fullName":"Kelvin Kgarudi","timestamp":"2026-04-13T16:04:34.183Z","distance":0.009669604},{"id":1,"personId":"WR45","fullName":"Kelvin Kgarudi","timestamp":"2026-04-13T16:02:49.708Z","distance":0.032146342}]}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m4:13:23 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/logs.tsx, /src/index.css[22m

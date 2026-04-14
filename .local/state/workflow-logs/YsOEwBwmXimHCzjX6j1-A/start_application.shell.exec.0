@@ -1,0 +1,123 @@
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+[1G[0K4:02:02 PM [express] serving on port 5000
+Browserslist: browsers data (caniuse-lite) is 6 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+A PostCSS plugin did not pass the `from` option to `postcss.parse`. This may cause imported assets to be incorrectly transformed. If you've recently added a PostCSS plugin that raised this warning, please contact the package author to fix the issue.
+4:02:10 PM [express] GET /api/stats 200 in 25ms :: {"totalPeople":1,"todayAttendance":0,"recentActivity":[]}
+4:02:14 PM [express] GET /api/stats 200 in 3ms :: {"totalPeople":1,"todayAttendance":0,"recentActivity":[]}
+4:02:49 PM [express] POST /api/attendance/check 200 in 146ms :: [{"personId":"WR45","fullName":"Kelvin Kgarudi","distance":0.03214634351693235,"bbox":{"x":253.12856610294733,"y":124.34020567462416,"width":223.52070261491562,"height":202.91477591507962},"isNew":true}]
+4:03:04 PM [express] POST /api/attendance/check 200 in 16ms :: [{"personId":"WR45","fullName":"Kelvin Kgarudi","distance":0,"bbox":{"x":95.49471661151439,"y":242.10971347060857,"width":261.1855538311621,"height":249.71920705069306},"isNew":false}]
+4:03:07 PM [express] POST /api/attendance/check 200 in 3ms :: [{"personId":"WR45","fullName":"Kelvin Kgarudi","distance":0,"bbox":{"x":95.49471661151439,"y":242.10971347060857,"width":261.1855538311621,"height":249.71920705069306},"isNew":false}]
+4:03:15 PM [express] POST /api/attendance/check 200 in 3ms :: [{"personId":"WR45","fullName":"Kelvin Kgarudi","distance":0,"bbox":{"x":95.49471661151439,"y":242.10971347060857,"width":261.1855538311621,"height":249.71920705069306},"isNew":false}]
+4:03:57 PM [express] POST /api/people 409 in 12ms :: {"error":"Person with this ID already exists"}
+4:03:59 PM [express] POST /api/people 409 in 1ms :: {"error":"Person with this ID already exists"}
+4:04:16 PM [express] POST /api/people 201 in 191ms :: {"success":true,"personId":"WR477"}
+4:04:34 PM [express] POST /api/attendance/check 200 in 16ms :: [{"personId":"WR477","fullName":"Kelvin Kgarudi","distance":0.009669604034286516,"bbox":{"x":300.9260314252547,"y":110.65479981138081,"width":228.7326281012342,"height":207.34189623794288},"isNew":true}]
+4:04:38 PM [express] POST /api/attendance/check 200 in 4ms :: [{"personId":"WR477","fullName":"Kelvin Kgarudi","distance":0.00839708787749005,"bbox":{"x":299.7044364417877,"y":115.62725822235251,"width":240.04807076875693,"height":219.8587597958327},"isNew":false}]
+4:04:45 PM [express] POST /api/attendance/check 200 in 3ms :: [{"personId":"WR477","fullName":"Kelvin Kgarudi","distance":0.0067887491899477626,"bbox":{"x":302.66061355502995,"y":112.30037036953215,"width":233.71235154130545,"height":223.13818035820626},"isNew":false}]
+4:04:47 PM [express] POST /api/attendance/check 200 in 2ms :: [{"personId":"WR477","fullName":"Kelvin Kgarudi","distance":0.009619554230021476,"bbox":{"x":303.0112303918278,"y":113.80215695835435,"width":235.467131244863,"height":219.05350884936206},"isNew":false}]
+4:04:53 PM [express] POST /api/attendance/check 200 in 3ms :: [{"personId":"WR477","fullName":"Kelvin Kgarudi","distance":0.009659154881791032,"bbox":{"x":293.2666304824772,"y":110.998121092437,"width":241.78988554238518,"height":225.66151946213793},"isNew":false}]
+4:05:02 PM [express] POST /api/attendance/check 200 in 3ms :: [{"personId":"WR45","fullName":"Kelvin Kgarudi","distance":0,"bbox":{"x":95.49471661151439,"y":242.10971347060857,"width":261.1855538311621,"height":249.71920705069306},"isNew":false}]
+4:05:14 PM [express] POST /api/attendance/check 200 in 14ms :: [{"personId":"WR477","fullName":"Kelvin Kgarudi","distance":0.011918584473259108,"bbox":{"x":297.7881794932638,"y":114.6658910123173,"width":233.5637150655275,"height":203.42359122341182},"isNew":false}]
+4:05:41 PM [express] POST /api/attendance/check 200 in 12ms :: [{"personId":"WR477","fullName":"Kelvin Kgarudi","distance":0.012684956145835646,"bbox":{"x":290.7832942822649,"y":114.52515410979967,"width":223.19907695753145,"height":202.84795483495606},"isNew":false}]
+4:06:09 PM [express] POST /api/attendance/check 200 in 11ms :: [{"personId":"WR477","fullName":"Kelvin Kgarudi","distance":0.011823930676502337,"bbox":{"x":292.40041878700174,"y":109.28741946738202,"width":225.15593243920364,"height":206.04665294922137},"isNew":false}]
+4:06:19 PM [express] POST /api/attendance/check 200 in 12ms :: [{"personId":"WR477","fullName":"Kelvin Kgarudi","distance":0.00966214872446125,"bbox":{"x":286.5323317611019,"y":109.63575463454913,"width":237.5158562634168,"height":214.6277606867354},"isNew":false}]
+4:06:42 PM [express] GET /api/stats 200 in 14ms :: {"totalPeople":2,"todayAttendance":2,"recentActivity":[{"id":2,"personId":"WR477","fullName":"Kelvin Kgarudi","timestamp":"2026-04-13T16:04:34.183Z","distance":0.009669604},{"id":1,"personId":"WR45","fullName":"Kelvin Kgarudi","timestamp":"2026-04-13T16:02:49.708Z","distance":0.032146342}]}
+4:06:49 PM [express] GET /api/people 200 in 2ms :: [{"personId":"WR477","fullName":"Kelvin Kgarudi","role":"Information Technology","sampleCount":3,"createdAt":"2026-04-13T16:04:15.990Z"},{"personId":"WR45","fullName":"Kelvin Kgarudi","role":"Information Technology","sampleCount":3,"createdAt":"2026-04-13T16:01:35.535Z"}]
+4:06:55 PM [express] GET /api/attendance/[object%20Object] 200 in 6ms
+4:07:01 PM [express] GET /api/attendance/[object%20Object] 200 in 5ms
+4:07:01 PM [express] GET /api/attendance/[object%20Object] 200 in 5ms
+4:07:02 PM [express] GET /api/attendance/[object%20Object] 200 in 4ms
+4:07:04 PM [express] GET /api/attendance/[object%20Object] 200 in 4ms
+4:07:04 PM [express] GET /api/attendance/[object%20Object] 200 in 4ms
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m4:07:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/attendance.tsx, /src/index.css[22m
+4:07:04 PM [express] GET /api/attendance/[object%20Object] 200 in 5ms
+4:07:08 PM [express] GET /api/attendance/[object%20Object] 200 in 4ms
+4:07:10 PM [express] GET /api/attendance/[object%20Object] 200 in 4ms
+4:07:11 PM [express] GET /api/attendance/[object%20Object] 200 in 3ms
+4:07:11 PM [express] GET /api/attendance/[object%20Object] 200 in 3ms
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m4:07:13 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/register.tsx, /src/index.css[22m
+4:07:15 PM [express] GET /api/attendance/[object%20Object] 200 in 4ms
+4:07:15 PM [express] GET /api/attendance/[object%20Object] 200 in 3ms
+4:07:17 PM [express] GET /api/attendance/[object%20Object] 200 in 3ms

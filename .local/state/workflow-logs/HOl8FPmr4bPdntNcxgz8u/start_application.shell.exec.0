@@ -1,0 +1,15 @@
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+[1G[0K4:13:32 PM [express] serving on port 5000
+Browserslist: browsers data (caniuse-lite) is 6 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+A PostCSS plugin did not pass the `from` option to `postcss.parse`. This may cause imported assets to be incorrectly transformed. If you've recently added a PostCSS plugin that raised this warning, please contact the package author to fix the issue.
+4:13:39 PM [express] GET /api/stats 304 in 25ms :: {"totalPeople":1,"todayAttendance":3,"recentActivity":[{"id":3,"personId":"WER234","fullName":"Khotso Kgardi","timestamp":"2026-04-13T16:09:32.325Z","distance":0.015358056},{"id":2,"personId":"WR477","fullName":"Kelvin Kgarudi","timestamp":"2026-04-13T16:04:34.183Z","distance":0.009669604},{"id":1,"personId":"WR45","fullName":"Kelvin Kgarudi","timestamp":"2026-04-13T16:02:49.708Z","distance":0.032146342}]}
+4:14:58 PM [express] GET /api/attendance 200 in 12ms :: [{"id":3,"personId":"WER234","fullName":"Khotso Kgardi","timestamp":"2026-04-13T16:09:32.325Z","distance":0.015358056},{"id":2,"personId":"WR477","fullName":"Kelvin Kgarudi","timestamp":"2026-04-13T16:04:34.183Z","distance":0.009669604},{"id":1,"personId":"WR45","fullName":"Kelvin Kgarudi","timestamp":"2026-04-13T16:02:49.708Z","distance":0.032146342}]
+4:15:25 PM [express] GET /api/attendance 304 in 13ms :: [{"id":3,"personId":"WER234","fullName":"Khotso Kgardi","timestamp":"2026-04-13T16:09:32.325Z","distance":0.015358056},{"id":2,"personId":"WR477","fullName":"Kelvin Kgarudi","timestamp":"2026-04-13T16:04:34.183Z","distance":0.009669604},{"id":1,"personId":"WR45","fullName":"Kelvin Kgarudi","timestamp":"2026-04-13T16:02:49.708Z","distance":0.032146342}]
+4:16:24 PM [express] GET /api/people 304 in 12ms :: [{"personId":"WER234","fullName":"Khotso Kgardi","role":"Information Technology","sampleCount":3,"createdAt":"2026-04-13T16:09:17.955Z"}]
+4:16:32 PM [express] GET /api/stats 304 in 4ms :: {"totalPeople":1,"todayAttendance":3,"recentActivity":[{"id":3,"personId":"WER234","fullName":"Khotso Kgardi","timestamp":"2026-04-13T16:09:32.325Z","distance":0.015358056},{"id":2,"personId":"WR477","fullName":"Kelvin Kgarudi","timestamp":"2026-04-13T16:04:34.183Z","distance":0.009669604},{"id":1,"personId":"WR45","fullName":"Kelvin Kgarudi","timestamp":"2026-04-13T16:02:49.708Z","distance":0.032146342}]}
